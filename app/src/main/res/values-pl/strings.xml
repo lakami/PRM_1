@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">prm_zad1</string>
+    <string name="product_name">Nazwa produktu</string>
+    <string name="category">Kategoria</string>
+    <string-array name="category">
+        <item>Leki</item>
+        <item>Kosmetyki</item>
+        <item>Produkty spożywcze</item>
+    </string-array>
+    <string name="quantity">Ilość</string>
+    <string name="unit">Jednostka</string>
+    <string name="is_deleted">Czy usunięto</string>
+    <string name="expiration_date">Data ważności</string>
+    <string name="product_image">Zdjęcie produktu</string>
+    <string-array name="category_filter">
+        <item>Leki</item>
+        <item>Kosmetyki</item>
+        <item>Produkty spożywcze</item>
+        <item>Wszystkie kategorie</item>
+    </string-array>
+    <string-array name="state_filter">
+        <item>Przeterminowany</item>
+        <item>Ważny</item>
+        <item>Wszystkie stany</item>
+    </string-array>
+    <string name="quantity_empty_info">Ilość nie może być pusta.</string>
+    <string name="unit_empty_info">Jednostka nie może być pusta.</string>
+    <string name="name_empty_info">Nazwa produktu nie może być pusta.</string>
+    <string name="remove_question">Czy chcesz usunąć produkt?</string>
+    <string name="remove_answer_yes">Tak</string>
+    <string name="remove_answer_no">Nie</string>
+    <string name="expired_product">Produkt utracił już ważność. Nie można go edytować.</string>
+    <string name="count_products_on_list">Liczba produktów: %d</string>
+</resources>
