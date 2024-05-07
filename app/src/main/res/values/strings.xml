@@ -30,5 +30,7 @@
     <string name="remove_answer_yes">Yes</string>
     <string name="remove_answer_no">No</string>
     <string name="expired_product">Product has already been expired. Can not be edited.</string>
-    <string name="count_products_on_list">Number of products: %d</string>
+    <string name="count_products_on_list">Number of filtered products: %d</string>
+    <string name="is_deleted_true">Ejected</string>
+    <string name="is_deleted_false">Valid</string>
 </resources>

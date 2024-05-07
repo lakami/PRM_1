@@ -6,8 +6,6 @@
                                                    android:layout_height="match_parent"
                                                    tools:context=".fragment.ListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp" app:layout_constraintStart_toStartOf="parent"
@@ -15,39 +13,71 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toTopOf="@+id/guideline"
             android:id="@+id/list" tools:listitem="@layout/list_iteam"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintVertical_bias="0.0" android:layout_marginTop="60dp"/>
     <androidx.constraintlayout.widget.Guideline
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/guideline" app:layout_constraintGuide_percent="0.75"/>
-    <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="50dp" android:id="@+id/filterCategory"
-            app:layout_constraintStart_toStartOf="parent"
-            android:entries="@array/category_filter"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toStartOf="@+id/filterState"
-            app:layout_constraintBottom_toTopOf="@+id/btAdd" android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/countListElements" android:layout_marginEnd="8dp"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btAdd"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btAdd"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
             app:icon="@android:drawable/ic_menu_add"
-            android:layout_marginBottom="16dp" android:layout_marginEnd="16dp"
-    />
-    <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="50dp" android:id="@+id/filterState"
-            android:entries="@array/state_filter"
-            app:layout_constraintTop_toTopOf="@+id/filterCategory"
-            app:layout_constraintStart_toEndOf="@+id/filterCategory" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:layout_marginStart="8dp"/>
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:cornerRadius="8dp" app:iconSize="32dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/countListElements"
-            app:layout_constraintTop_toBottomOf="@+id/list" app:layout_constraintStart_toStartOf="@+id/filterCategory"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/filtersSpiners"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/btAdd"
+            android:layout_marginTop="8dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp" android:textAlignment="center"/>
+    <LinearLayout
+            android:id="@+id/filtersSpiners"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:weightSum="2"
+    >
+        <Spinner
+                android:id="@+id/filterCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:entries="@array/category_filter"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"/>
+        <Spinner
+                android:id="@+id/filterState"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:entries="@array/state_filter"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"/>
+    </LinearLayout>
+    <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/logo" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/list"
+            android:scaleType="fitCenter" app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp" android:layout_marginEnd="12dp" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0" android:layout_marginBottom="0px"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

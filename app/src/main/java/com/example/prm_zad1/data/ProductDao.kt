@@ -14,9 +14,6 @@ interface ProductDao {
     @Query("SELECT * FROM product WHERE id = :id")
     fun getProduct(id: Long): ProductEntity
 
-//    @Query("SELECT * FROM product ORDER BY name ASC") //todo czy to potrzebne
-//    fun getAllSortedByName(): List<ProductEntity>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addProduct(newProduct: ProductEntity)
 

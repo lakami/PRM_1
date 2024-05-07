@@ -1,11 +1,9 @@
 package com.example.prm_zad1.adapters
 
 import android.app.AlertDialog
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prm_zad1.R
 import com.example.prm_zad1.data.ProductDatabase
@@ -26,11 +24,14 @@ class ProductViewHolder(val binding: ListIteamBinding)
     ) {
         binding.apply {
             binding.productName.text = product.name
-            binding.expirationDate.text = LocalDateTime.ofInstant(Instant.ofEpochMilli(product.expirationDate), ZoneId.of("Europe/Warsaw")).format(
-                DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+            binding.expirationDate.text = LocalDateTime.ofInstant(Instant.ofEpochMilli(product.expirationDate), ZoneId.of("Europe/Warsaw"))
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
             binding.category.text = binding.root.context.resources.getStringArray(R.array.category)[product.category]
             binding.quantity.text = product.quantity.toString()
-            binding.isDeleted.text = product.isDeleted.toString()
+            binding.productUnit.text = product.unit
+            binding.isDeleted.text = if(product.isDeleted)
+                binding.root.context.resources.getString(R.string.is_deleted_true)
+                else binding.root.context.resources.getString(R.string.is_deleted_false)
             binding.image.setImageResource(product.resId)
         }
         binding.root.setOnLongClickListener {
@@ -106,20 +107,6 @@ class ProductsAdapter(db : ProductDatabase,
         data.addAll(newData)
         onListUpdate(data.size)
         notifyDataSetChanged()
-    }
-
-    fun removeItem(layoutPosition: Int): Product { //todo ??????????
-        val product = data.removeAt(layoutPosition)
-        notifyItemRemoved(layoutPosition)
-        return product
-    }
-
-    fun updateItem(product: Product) {
-        val index = data.indexOfFirst { it.id == product.id }
-        if (index != -1) {
-            data[index] = product
-            notifyItemChanged(index)
-        }
     }
 
 }

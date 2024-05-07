@@ -1,19 +1,15 @@
 package com.example.prm_zad1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.prm_zad1.data.ProductDatabase
+import androidx.appcompat.app.AppCompatActivity
 import com.example.prm_zad1.fragment.ARG_EDIT_ID
 import com.example.prm_zad1.fragment.EditFragment
 import com.example.prm_zad1.fragment.ListFragment
-import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity(), Navigable {
     private lateinit var listFragment: ListFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        thread { ProductDatabase.open(this).products.deleteWrongCategory() }//todo: usuwanie zlej kategorii do wywalenia
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -34,17 +30,8 @@ class MainActivity : AppCompatActivity(), Navigable {
                         EditFragment()::class.java,
                         Bundle().apply { putLong(ARG_EDIT_ID, id ?: -1L) },
                         EditFragment::class.java.name)
-                    addToBackStack(EditFragment::class.java.name) //todo:cofanie do elementu
+                    addToBackStack(EditFragment::class.java.name)
                 }
-//                Navigable.Destination.EDIT -> {
-//                    replace(
-//                        R.id.container,
-//                        EditFragment()::class.java,
-//                        Bundle().apply { putLong(ARG_EDIT_ID, id ?: -1L) },
-//                        EditFragment::class.java.name
-//                    )
-//                    addToBackStack(EditFragment::class.java.name)
-//                }
             }
         }.commit()
     }

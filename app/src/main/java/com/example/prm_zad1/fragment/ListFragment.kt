@@ -1,11 +1,11 @@
 package com.example.prm_zad1.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.prm_zad1.Navigable
 import com.example.prm_zad1.R
@@ -113,7 +113,7 @@ class ListFragment : Fragment() {
             )
         }
 
-        requireActivity().runOnUiThread { //todo:
+        requireActivity().runOnUiThread {
             adapter?.replace(products)
         }
     }
