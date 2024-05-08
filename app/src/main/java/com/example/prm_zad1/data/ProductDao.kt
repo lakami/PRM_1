@@ -23,8 +23,11 @@ interface ProductDao {
     @Query("UPDATE product SET isDeleted = ${true} WHERE id = :id")
     fun markAsDeleted(id: Long)
 
-//    @Query("DELETE FROM product WHERE category = 0") //todo czyszczenie
-//    fun deleteWrongCategory()
+    @Query("DELETE FROM product")
+    fun deleteAllProducts()
+
+    @Insert()
+    fun addAll(products: Array<ProductEntity>)
 
     @Query("DELETE FROM product WHERE id = :id")
     fun remove(id: Long)

@@ -22,11 +22,14 @@ class ProductImageViewHolder(val binding: ProductImageBinding)
 
 class ProductImagesAdapter : RecyclerView.Adapter<ProductImageViewHolder>() {
     private val images = listOf(
-        R.drawable.karma_1,
-        R.drawable.karma_2,
-        R.drawable.karma_3,
-        R.drawable.karma_4,
-        R.drawable.karma_5
+        R.drawable.cosmetic_01,
+        R.drawable.cosmetic_02,
+        R.drawable.cosmetic_03,
+        R.drawable.medicine_01,
+        R.drawable.medicine_02,
+        R.drawable.medicine_03,
+        R.drawable.food_01,
+        R.drawable.food_02
     )
     private var selectedPosition: Int = 0
     val selectedIdRes : Int
