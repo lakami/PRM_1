@@ -1,20 +1,18 @@
 package com.example.prm_zad1.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.prm_zad1.Navigable
 import com.example.prm_zad1.R
 import com.example.prm_zad1.adapters.ProductImagesAdapter
 import com.example.prm_zad1.data.ProductDatabase
 import com.example.prm_zad1.data.model.ProductEntity
 import com.example.prm_zad1.databinding.FragmentEditBinding
-import com.example.prm_zad1.model.Product
 import java.util.*
 import kotlin.concurrent.thread
 
@@ -97,6 +95,8 @@ class EditFragment : Fragment() {
                     )
                 }
             }
+        } else {
+            binding.quntity.setText("0")
         }
 
         binding.images.apply {

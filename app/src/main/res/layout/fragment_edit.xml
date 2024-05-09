@@ -16,6 +16,7 @@
                 android:inputType="text"
                 android:ems="10"
                 android:id="@+id/productName"
+                android:hint="@string/product_name"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="16dp" android:layout_marginEnd="16dp"
                 app:layout_constraintStart_toEndOf="@+id/productNameLabel" app:layout_constraintHorizontal_bias="0.5"
@@ -26,6 +27,7 @@
                 android:inputType="text"
                 android:ems="10"
                 android:id="@+id/unit"
+                android:hint="@string/unit"
                 app:layout_constraintStart_toStartOf="@+id/quntity" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/quntity" android:textSize="18sp" android:minHeight="48dp"/>
         <TextView
