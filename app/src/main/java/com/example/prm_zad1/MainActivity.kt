@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), Navigable {
 
         db = ProductDatabase.open(this)
         thread {
-            db.products.deleteAllProducts()
+//            db.products.deleteAllProducts()
             loadDataIfEmptyDB()
         }
 
